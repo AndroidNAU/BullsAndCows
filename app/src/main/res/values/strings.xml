@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">BullsAndCows</string>
     <string name="action_settings">Settings</string>
+    <string name="play">Play</string>
+    <string name="results">Results</string>
+    <string name="exit">Exit</string>
 </resources>
