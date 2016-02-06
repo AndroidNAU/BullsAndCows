@@ -122,9 +122,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="New Button"
-            android:id="@+id/button_seven"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="0.33" />
+            android:id="@+id/button_seven"  />
 
         <Button
             style="?android:attr/buttonStyleSmall"
@@ -153,9 +151,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="New Button"
-            android:id="@+id/button_dell"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="0.33" />
+            android:id="@+id/button_dell" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
