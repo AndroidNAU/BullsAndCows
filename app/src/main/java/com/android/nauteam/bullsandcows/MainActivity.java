@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,19 +23,25 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_menu);
 
-        mresume_button = (Button)findViewById(R.id.resume_button);
-        mnew_game_button = (Button)findViewById(R.id.new_game_button);
+        mresume_button = (Button) findViewById(R.id.resume_button);
+        mnew_game_button = (Button) findViewById(R.id.new_game_button);
         mnew_game_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Toast.makeText(MainActivity.this,
+                        R.string.new_game,
+                        Toast.LENGTH_SHORT).show();
             }
         });
 
-        mscores_button = (Button)findViewById(R.id.scores_button);
-        mexit_button = (Button)findViewById(R.id.exit_button);
+        mscores_button = (Button) findViewById(R.id.scores_button);
+        mexit_button = (Button) findViewById(R.id.exit_button);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+    }
+}
+
+
+        /*Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -44,10 +51,10 @@ public class MainActivity extends AppCompatActivity {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });
-    }
+        });*/
+    /*}*/
 
-    @Override
+ /*   @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
@@ -69,3 +76,4 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 }
+*/
