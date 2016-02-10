@@ -1,9 +1,4 @@
 <resources>
     <string name="app_name">BullsAndCows</string>
     <string name="action_settings">Settings</string>
-    <!-- Strings from menu -->
-    <string name="resume">Resume</string>
-    <string name="new_game">New Game</string>
-    <string name="scores">Scores</string>
-    <string name="exit">Exit</string>
 </resources>
