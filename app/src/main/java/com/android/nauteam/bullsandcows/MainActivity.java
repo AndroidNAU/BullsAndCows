@@ -6,6 +6,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
@@ -36,6 +37,14 @@ public class MainActivity extends AppCompatActivity {
 
         mscores_button = (Button) findViewById(R.id.scores_button);
         mexit_button = (Button) findViewById(R.id.exit_button);
+        mexit_button.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                finish();
+                System.exit(0);
+            }
+        });
 
     }
 }
