@@ -5,9 +5,8 @@
 
     <!-- view background color -->
     <solid
-        android:color="#FFA54F" >
+        android:color="#8191d6" >
     </solid>
-
     <!-- Here is the corner radius -->
     <corners
         android:radius="15dp"   >

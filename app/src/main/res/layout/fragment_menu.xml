@@ -7,39 +7,51 @@
 
 
     <Button
-        android:layout_width="200dp"
-        android:layout_height="70dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="75dp"
+        android:minWidth="200dp"
         android:text="@string/resume"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="25dp"
         android:background="@drawable/rounded_corners"
+        android:textColor="#FFFFFF"
         android:id="@+id/resume_button" />
 
     <Button
-        android:layout_width="200dp"
-        android:layout_height="70dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="75dp"
+        android:minWidth="200dp"
         android:text="@string/new_game"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="25dp"
         android:background="@drawable/rounded_corners"
+        android:textColor="#FFFFFF"
         android:id="@+id/new_game_button" />
 
     <Button
-        android:layout_width="200dp"
-        android:layout_height="70dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="75dp"
+        android:minWidth="200dp"
         android:text="@string/scores"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="25dp"
         android:background="@drawable/rounded_corners"
+        android:textColor="#FFFFFF"
         android:id="@+id/scores_button"/>
 
     <Button
-        android:layout_width="200dp"
-        android:layout_height="70dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="75dp"
+        android:minWidth="200dp"
         android:text="@string/exit"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/rounded_corners"
+        android:textColor="#FFFFFF"
         android:id="@+id/exit_button"/>
 
 
