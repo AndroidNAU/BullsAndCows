@@ -6,7 +6,11 @@ public class Number {
 
     public void setNumber(String strNumber)
     {
-        mDigits = strNumber.getBytes();
+        for(byte i = 0; i < 4; i++)
+        {
+            String tmp = strNumber.substring(i, i + 1);
+            mDigits[i] = Byte.decode(tmp);
+        }
     }
 
     public Number(String strNumber)
@@ -16,7 +20,11 @@ public class Number {
 
     public String getDigits()
     {
-        return mDigits.toString();
+        String tmp;
+        tmp = Byte.toString(mDigits[0]);
+        for(byte i = 1; i < 4; i++)
+            tmp += Byte.toString(mDigits[i]);
+        return tmp;
     }
 
     public byte getCows(Number usrNumber)
