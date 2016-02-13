@@ -8,11 +8,9 @@ public class Number {
 
     public void setNumber(String strNumber)
     {
+        char [] tmpArr = strNumber.toCharArray();
         for(byte i = 0; i < 4; i++)
-        {
-            String tmp = strNumber.substring(i, i + 1);
-            mDigits[i] = Byte.decode(tmp);
-        }
+            mDigits[i] = Byte.decode(String.valueOf(tmpArr[i]));
     }
 
     public Number(String strNumber)
