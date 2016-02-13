@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.android.nauteam.bullsandcows.R;
+import com.android.nauteam.bullsandcows.fragments.ButtonsFragment;
 import com.android.nauteam.bullsandcows.fragments.TurnsListFragment;
 
 public class GameActivity extends AppCompatActivity {
@@ -32,6 +33,7 @@ public class GameActivity extends AppCompatActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment turnsListFragment = TurnsListFragment.newInstance();
         fragmentManager.beginTransaction().add(R.id.turnsListFragment_container,turnsListFragment).commit();
-
+        Fragment buttonsFragment = ButtonsFragment.newInstance();
+        fragmentManager.beginTransaction().add(R.id.buttonsFragment_container,buttonsFragment).commit();
     }
 }

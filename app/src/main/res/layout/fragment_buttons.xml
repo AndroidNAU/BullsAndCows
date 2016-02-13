@@ -14,7 +14,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Medium Text"
-            android:id="@+id/textView"
+            android:id="@+id/textView_digit_one"
             android:layout_weight="0.25" />
 
         <TextView
@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Medium Text"
-            android:id="@+id/textView2"
+            android:id="@+id/textView_digit_two"
             android:layout_weight="0.25" />
 
         <TextView
@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Medium Text"
-            android:id="@+id/textView3"
+            android:id="@+id/textView_digit_three"
             android:layout_weight="0.25" />
 
         <TextView
@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Medium Text"
-            android:id="@+id/textView4"
+            android:id="@+id/textView_digit_four"
             android:layout_weight="0.25" />
     </LinearLayout>
 
