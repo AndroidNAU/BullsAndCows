@@ -23,25 +23,40 @@ public class Game {
     public Game(){
         Random r = new Random();
         
-        int [] tmparr = new int[4];
-        
+        int [] tmpArr = new int[4];
+        /*
+            Here we have to generate mSecretNum.
+            For that we use Array of integer numbers.
+            But the first element of this array must not be equel to zero.
+            It means that boundaries for the first element should be from 1 to 9.
+            Also boundaries for other elements should be from 0 to 9.
+            And all other elements must not be equals to each other.
+            For make boundaries of random generation we use this formula:
+                nextInt(max - min + 1) + min
+        */        
         for (int i = 0; i < 4; i++) 
         {
+            //Generate the first element 
             if (i == 0)
             {
-                tmparr[i] = r.nextInt(9 - 1 + 1) + 1;
+                final int max = 9;
+                final int min = 1;
+                tmpArr[i] = r.nextInt(max - min + 1) + min;
             }
+            //Generate other elements 
             else 
             {
+                final int max = 9;
+                final int min = 0;
+                tmpArr[i] = r.nextInt(max - min + 1) + min;
                 
-                tmparr[i] = r.nextInt(9 - 0 + 1) + 0;
+                //If elements are equals we should generate them one more time
                 int j = 0;
-
                 while (j < i) 
                 {
-                    if (tmparr[i] == tmparr[j])
+                    if (tmpArr[i] == tmpArr[j])
                     {
-                        tmparr[i] = r.nextInt(9 - 0 + 1) + 0;
+                        tmpArr[i] = r.nextInt(max - min + 1) + min;
                         j = 0;
                     }
                     else
@@ -52,10 +67,9 @@ public class Game {
             }            
         }
         
-        String tmp;
-        tmp = Integer.toString(tmparr[0]);
+        String tmp = Integer.toString(tmpArr[0]);
         for(byte i = 1; i < 4; i++)
-            tmp += Integer.toString(tmparr[i]);
+            tmp += Integer.toString(tmpArr[i]);
         
         mSecretNum = new Number(tmp);
     }
