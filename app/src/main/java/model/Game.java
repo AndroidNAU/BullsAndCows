@@ -53,6 +53,55 @@ public class Game {
         
     }
     
+    public String getLevel()
+    {
+        int level = mTurns.size();
+        String strLevel;
+        switch (level){
+            case 1:
+                strLevel = "SUPERMEGAFARMER";
+            case 2:
+                strLevel = "Expert";
+            case 3:
+                strLevel = "Big Boss";
+            case 4:
+                strLevel = "Elect";
+            case 5:
+                strLevel = "Pretty Boy";
+            case 6:
+                strLevel = "Senior";
+            case 7:
+                strLevel = "CowBoy";
+            case 8:
+                strLevel = "Advansed";
+            case 9:
+                strLevel = "Pick-up Wizard";
+            case 10:
+                strLevel = "Skillful";
+            case 11:
+                strLevel = "Talented";
+            case 12:
+                strLevel = "50 / 50";
+            case 13:
+                strLevel = "Lucky Devil";
+            case 14:
+                strLevel = "Budding";
+            case 15:
+                strLevel = "Intermediate";
+            case 16:
+                strLevel = "Junior";
+            case 17:
+                strLevel = "School Child";
+            case 18:
+                strLevel = "Mother's Darling";
+            case 19:
+                strLevel = "Baby";
+            default:
+                strLevel = "Newbie";
+        }
+        return strLevel;
+    }
+ 
     public String toMString()
     {
         String tmp = "g/";
