@@ -3,6 +3,7 @@ package com.android.nauteam.bullsandcows;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -12,19 +13,22 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends FragmentActivity {
 
-    private Button mresume_button;
-    private Button mnew_game_button;
-    private Button mscores_button;
-    private Button mexit_button;
-
+    /*   private Button mresume_button;
+       private Button mnew_game_button;
+       private Button mscores_button;
+       private Button mexit_button;
+    */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_menu);
+    }
+}
 
-        mresume_button = (Button) findViewById(R.id.resume_button);
+
+      /*  mresume_button = (Button) findViewById(R.id.resume_button);
         mnew_game_button = (Button) findViewById(R.id.new_game_button);
         mnew_game_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-}
+}*/
 
 
         /*Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
