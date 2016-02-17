@@ -10,24 +10,23 @@ public class Turn {
     private byte mCows;
 
     public Turn(String tmp){
-        //Example of tmp is "/****/*/*"
+        //Example of tmp is "****/*/*"
         
         String [] forTurnArr = tmp.split("/");
         /*
             After this split we have such array
-            forTurnArr[0] = ""
-            forTurnArr[1] = "****"
+            forTurnArr[0] = "****"
+            forTurnArr[1] = "*"
             forTurnArr[2] = "*"
-            forTurnArr[3] = "*"
         */
         
-        String forNumber = forTurnArr[1];
+        String forNumber = forTurnArr[0];
         mNumber = new Number(forNumber);
         
-        String forBulls = forTurnArr[2];
+        String forBulls = forTurnArr[1];
         mBulls = Byte.decode(forBulls);
         
-        String forCows = forTurnArr[3];
+        String forCows = forTurnArr[2];
         mCows = Byte.decode(forCows);
     }
 
