@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package modelcowsandbulls;
 
 import java.util.ArrayList;
 import javafx.util.Pair;
@@ -38,6 +38,11 @@ public class NewGame extends Game{
         
         Pair<Byte, Byte> result = new Pair<Byte, Byte>(bulls, cows);
         return result;
+    }
+    
+    public NewGame()
+    {
+        super();
     }
     
     public NewGame(String tmp)
