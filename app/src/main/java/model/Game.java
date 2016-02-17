@@ -24,31 +24,25 @@ public class Game {
         mSecretNum = new Number();
     }
     
-   public Game(String tmp)
+    public Game(String tmp)
     {
         //Example of tmp is "g/****/t/****/*/*t/****/*/*"
-        String [] secretNumWithTurns = tmp.split("/t");
+        String [] secretNumWithTurns = tmp.split("t/");
        
           //  So we will have array secretNumWithTurns, example is:
-          //      secretNumWithTurns[0] = "g/****"
-          //      secretNumWithTurns[1] = "/****/*/*t/****/*/*"
+          //      secretNumWithTurns[0] = "g/****/"
+          //      secretNumWithTurns[1] = "****/*/*"
+          //      secretNumWithTurns[1] = "****/*/*"
         
         String forSecretNum = secretNumWithTurns[0].replaceAll("g/", "");
+        forSecretNum = forSecretNum.replaceAll("/", "");
         //After that forSecretNum will look like "****"
         mSecretNum = new Number(forSecretNum);
-         
-        String [] forAllTurns = secretNumWithTurns[1].split("t");
         
-        //    Example of all turns is:
-        //        forAllTurns[0] = "/****/*/*"
-        //        forAllTurns[1] = "/****/*/*"
-        //        forAllTurns[2] = "/****/*/*"
-        //        forAllTurns[3] = "/****/*/*"
-        
-        for(byte i = 0; i < forAllTurns.length; i++)
+        for(byte i = 1; i < secretNumWithTurns.length; i++)
         {
-            Turn tmpTurn = new Turn(forAllTurns[i]);
-            mTurns.add(tmpTurn);
+           Turn tmpTurn = new Turn(secretNumWithTurns[i]);
+           mTurns.add(tmpTurn);
         }
         
     }
