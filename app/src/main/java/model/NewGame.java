@@ -14,16 +14,11 @@ import javafx.util.Pair;
  */
 public class NewGame extends Game{
     private boolean mIsFinished;
+    private Turn mCurrentTurn;
     
-    public void setMIsfinished()
+    public void setMIsfinished(boolean tmp)
     {
-        ArrayList<Turn> tmpTurns = getMTurns();
-        int lastIndex = tmpTurns.lastIndexOf(tmpTurns);
-        Turn lastTurn = tmpTurns.get(lastIndex);
-        if(lastTurn.getMBulls() == 4)
-            mIsFinished = true;
-        else
-            mIsFinished = false;
+        mIsFinished = tmp;
     }
     
     public boolean getMIsFinished()
@@ -33,14 +28,13 @@ public class NewGame extends Game{
     
     Pair<Byte, Byte> checkNumber()
     {
-        ArrayList<Turn> tmpTurns = getMTurns();
-        int lastIndex = tmpTurns.lastIndexOf(tmpTurns);
-        Turn lastTurn = tmpTurns.get(lastIndex);
-        
-        Number tmpNumber = lastTurn.getMNumber();
+        Number tmpNumber = mCurrentTurn.getMNumber();
         
         Byte bulls = tmpNumber.getBulls(tmpNumber);
         Byte cows = tmpNumber.getCows(tmpNumber);
+        
+        if(bulls == 4)
+            setMIsfinished(true);
         
         Pair<Byte, Byte> result = new Pair<Byte, Byte>(bulls, cows);
         return result;
@@ -48,10 +42,11 @@ public class NewGame extends Game{
     
     public NewGame(String tmp)
     {
+        super(tmp);
         if(tmp.startsWith("f"))
-            mIsFinished = true;
+            setMIsfinished(true);
         else
-            mIsFinished = false;
+            setMIsfinished(false);
     }
     
     @Override
