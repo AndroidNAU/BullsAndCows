@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package modelcowsandbulls;
+package model;
 
 import java.util.ArrayList;
 import javafx.util.Pair;
