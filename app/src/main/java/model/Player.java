@@ -33,7 +33,7 @@ public class Player {
     
     public boolean isGameStarted()
     {
-        if(mCurrentGame != null)
+        if(mCurrentGame.getMIsFinished() == false)
             return true;
         else
             return false;
@@ -41,12 +41,12 @@ public class Player {
     
     public void startNewGame()
     {
-        mCurrentGame = (NewGame) new Game();
+        mCurrentGame = new NewGame();
     }
     
     public void resumeGame(String tmp)
     {
-        mCurrentGame = (NewGame) new Game(tmp);
+        mCurrentGame = new NewGame(tmp);
     }
     
     public void addCurrentToHistory()
