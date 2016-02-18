@@ -19,23 +19,23 @@ public class MenuFragment extends Fragment {
     private Button mexit_button;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public View onCreateView(LayoutInflater inflater, ViewGroup parent,
+                             Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.fragment_menu, parent, false);
+
+
+
+        return v;
+
+    }
+
 
       /*  mresume_button = (Button) findViewById(R.id.resume_button);
         mnew_game_button = (Button) findViewById(R.id.new_game_button);
         mscores_button = (Button) findViewById(R.id.scores_button);
         mexit_button = (Button) findViewById(R.id.exit_button);
         */
-    }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup parent,
-                             Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_menu, parent, false);
-        return v;
 
-    }
 }
-
 
