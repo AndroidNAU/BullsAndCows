@@ -22,7 +22,6 @@ public class MainActivity extends Activity{
         FragmentManager fm = getFragmentManager();
 
         Fragment fragment = fm.findFragmentById(R.id.fragmentContainer);
-
         if (fragment == null) {
             fragment = new MenuFragment();
             fm.beginTransaction()
@@ -30,8 +29,6 @@ public class MainActivity extends Activity{
                     .commit();
 
         }
-
-
     }
 }
 

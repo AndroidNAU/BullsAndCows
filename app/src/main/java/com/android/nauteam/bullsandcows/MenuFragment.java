@@ -13,17 +13,16 @@ import android.view.View.OnClickListener;
 
 public class MenuFragment extends Fragment {
 
-    private Button mresume_button;
-    private Button mnew_game_button;
-    private Button mscores_button;
-    private Button mexit_button;
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_menu, parent, false);
-
-
 
         return v;
 
@@ -35,7 +34,9 @@ public class MenuFragment extends Fragment {
         mscores_button = (Button) findViewById(R.id.scores_button);
         mexit_button = (Button) findViewById(R.id.exit_button);
         */
-
-
+      /*private Button mresume_button;
+    private Button mnew_game_button;
+    private Button mscores_button;
+    private Button mexit_button;*/
 }
 
