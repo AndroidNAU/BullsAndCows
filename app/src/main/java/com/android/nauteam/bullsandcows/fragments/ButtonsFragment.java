@@ -32,8 +32,10 @@ public class ButtonsFragment extends Fragment {
  private TextView mTextView2;
  private TextView mTextView3;
  private TextView mTextView4;
- private static int mNumberOfDigits = 0;
- private ArrayList <String> mDigitsList;
+ private int mNumberOfDigits = 0;
+    private ArrayList <String> mDigitsList;
+
+    private boolean isFourthFilled = false;
 
     public static ButtonsFragment newInstance()
     {
@@ -48,10 +50,13 @@ public class ButtonsFragment extends Fragment {
         mDigitsList = new ArrayList<>();
 
     }
-    private void ButtonsManager(String digit, boolean isAdd){
-        if (isAdd){
+    private void ButtonsManager(String digit, boolean isDigit){
+
+        if( isDigit && mNumberOfDigits < 4){
+            mNumberOfDigits++;
             mDigitsList.add(digit);
         }
+
         switch (mNumberOfDigits){
             case 1:
                 mTextView1.setText(digit);
@@ -63,7 +68,13 @@ public class ButtonsFragment extends Fragment {
                 mTextView3.setText(digit);
                 break;
             case 4:
+                if(isDigit && isFourthFilled ) break;
+
                 mTextView4.setText(digit);
+
+                if(isDigit)isFourthFilled = true;
+                else isFourthFilled = false;
+
                 break;
             default:
                 break;
@@ -94,76 +105,64 @@ public class ButtonsFragment extends Fragment {
         mTextView1 = (TextView) view.findViewById(R.id.textView_digit_one);
         mTextView2 = (TextView) view.findViewById(R.id.textView_digit_two);
         mTextView3 = (TextView) view.findViewById(R.id.textView_digit_three);
-        mTextView3 = (TextView) view.findViewById(R.id.textView_digit_four);
+        mTextView4 = (TextView) view.findViewById(R.id.textView_digit_four);
 
         mButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mNumberOfDigits++;
                 ButtonsManager("1", true);
-
             }
         });
         mButton2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                mNumberOfDigits++;
-                ButtonsManager("2", true);
+            public void onClick(View v) { ButtonsManager("2", true);
             }
         });
         mButton3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mNumberOfDigits++;
                 ButtonsManager("3", true);
             }
         });
         mButton4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mNumberOfDigits++;
                 ButtonsManager("4", true);
             }
         });
         mButton5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mNumberOfDigits++;
                 ButtonsManager("5", true);
             }
         });
         mButton6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mNumberOfDigits++;
                 ButtonsManager("6", true);
             }
         });
         mButton7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mNumberOfDigits++;
                 ButtonsManager("7", true);
             }
         });
         mButton8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mNumberOfDigits++;
                 ButtonsManager("8", true);
             }
         });
         mButton9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mNumberOfDigits++;
                 ButtonsManager("9", true);
             }
         });
         mButton0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mNumberOfDigits++;
                 ButtonsManager("0", true);
             }
         });
@@ -171,8 +170,10 @@ public class ButtonsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 ButtonsManager(" ", false);
-                mDigitsList.remove(mNumberOfDigits);
-                mNumberOfDigits--;
+                if( mNumberOfDigits > 0 ){
+                  mNumberOfDigits--;
+                  mDigitsList.remove(mNumberOfDigits);
+              }
             }
         });
         mButtonOkay.setOnClickListener(new View.OnClickListener() {

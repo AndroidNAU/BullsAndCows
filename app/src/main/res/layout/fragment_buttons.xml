@@ -10,36 +10,32 @@
         android:layout_gravity="center_horizontal">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Medium Text"
             android:id="@+id/textView_digit_one"
-            android:layout_weight="0.25" />
+            android:layout_weight="1" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Medium Text"
             android:id="@+id/textView_digit_two"
-            android:layout_weight="0.25" />
+            android:layout_weight="1" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Medium Text"
             android:id="@+id/textView_digit_three"
-            android:layout_weight="0.25" />
+            android:layout_weight="1" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Medium Text"
             android:id="@+id/textView_digit_four"
-            android:layout_weight="0.25" />
+            android:layout_weight="1" />
     </LinearLayout>
 
     <LinearLayout
@@ -53,7 +49,7 @@
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Button"
+            android:text="1"
             android:id="@+id/button_one"
             android:layout_weight="0.33" />
 
@@ -61,7 +57,7 @@
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Button"
+            android:text="2"
             android:id="@+id/button_two"
             android:layout_gravity="center_vertical"
             android:layout_weight="0.33" />
@@ -70,7 +66,7 @@
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Button"
+            android:text="3"
             android:id="@+id/button_three"
             android:layout_gravity="center_vertical"
             android:layout_weight="0.33" />
@@ -87,7 +83,7 @@
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Button"
+            android:text="4"
             android:id="@+id/button_four"
             android:layout_weight="0.33" />
 
@@ -95,7 +91,7 @@
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Button"
+            android:text="5"
             android:id="@+id/button_five"
             android:layout_gravity="center_vertical"
             android:layout_weight="0.33" />
@@ -104,7 +100,7 @@
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Button"
+            android:text="6"
             android:id="@+id/button_six"
             android:layout_gravity="center_vertical"
             android:layout_weight="0.33" />
@@ -121,21 +117,21 @@
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Button"
+            android:text="7"
             android:id="@+id/button_seven"  />
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Button"
+            android:text="8"
             android:id="@+id/button_eight" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Button"
+            android:text="9"
             android:id="@+id/button_nine" />
     </LinearLayout>
 
@@ -150,21 +146,21 @@
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Button"
+            android:text="Del"
             android:id="@+id/button_dell" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Button"
+            android:text="0"
             android:id="@+id/button_zero" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Button"
+            android:text="Ok"
             android:id="@+id/button_okay" />
     </LinearLayout>
 </LinearLayout>
