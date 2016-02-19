@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    >
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp"
+        android:minWidth="125dp"
+        android:text="@string/no"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/rounded_corners"
+        android:textColor="#FFFFFF"
+        android:id="@+id/no_button"
+        android:layout_marginLeft="45dp"
+        android:layout_marginStart="45dp"
+        android:layout_alignTop="@+id/yes_button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp"
+        android:minWidth="125dp"
+        android:text="@string/yes"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/rounded_corners"
+        android:textColor="#FFFFFF"
+        android:id="@+id/yes_button"
+        android:layout_marginRight="45dp"
+        android:layout_marginEnd="45dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sure"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="95dp"
+        android:text="@string/sure"
+        android:textColor="#8191d6"/>
+
+</RelativeLayout>

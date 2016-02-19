@@ -33,7 +33,7 @@ public class MenuFragment extends Fragment {
         mnew_game_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), DemoGame.class);
+                Intent intent = new Intent(getActivity(), DemoGame.class);//DemoGame временный активити
                 startActivity(intent);
             }
         });
@@ -41,7 +41,7 @@ public class MenuFragment extends Fragment {
         mscores_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), DemoScores.class);
+                Intent intent = new Intent(getActivity(), DemoScores.class);//DemoScores времеенный активити
                 startActivity(intent);
             }
         });

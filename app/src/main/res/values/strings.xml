@@ -6,6 +6,10 @@
     <string name="new_game">New Game</string>
     <string name="scores">Scores</string>
     <string name="exit">Exit</string>
+    <!-- String for exit -->
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="sure">Sure?</string>
 
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
