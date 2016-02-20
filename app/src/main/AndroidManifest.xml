@@ -26,6 +26,7 @@
         <activity
             android:name="com.android.nauteam.bullsandcows.DemoScores" >
         </activity>
+        <activity android:name="com.android.nauteam.bullsandcows.ExitMenu"></activity>
     </application>
 
 </manifest>

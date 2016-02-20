@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.view.View.OnClickListener;
 
 
 public class MenuFragment extends Fragment {
@@ -46,9 +45,15 @@ public class MenuFragment extends Fragment {
             }
         });
         mexit_button = (Button) v.findViewById(R.id.exit_button);
+        mexit_button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
 
+                Intent intent = new Intent(getActivity(), ExitMenu.class);
+                startActivity(intent);
+            }
+        });
         return v;
 
     }
-
 }
