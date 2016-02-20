@@ -1,66 +1,63 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
 
-import java.util.ArrayList;
-import javafx.util.Pair;
+import android.util.Pair;
 
-/**
- *
- * @author Maxim
- */
-public class NewGame extends Game{
+public class NewGame extends Game {
+
     private boolean mIsFinished;
     private Turn mCurrentTurn;
-    
-    public void setMIsfinished(boolean tmp)
-    {
+
+    public NewGame() {
+        mIsFinished = false;
+        mCurrentTurn = null;
+    }
+
+    public NewGame(String tmp) {
+        super(tmp);
+        if(tmp.startsWith("f"))
+            setIsFinished(true);
+        else
+            setIsFinished(false);
+    }
+
+    public void setIsFinished(boolean tmp) {
         mIsFinished = tmp;
     }
     
-    public boolean getMIsFinished()
-    {
+    public boolean getIsFinished() {
         return mIsFinished;
     }
-    
-    Pair<Byte, Byte> checkNumber()
-    {
-        Number tmpNumber = mCurrentTurn.getMNumber();
-        
-        Byte bulls = tmpNumber.getBulls(tmpNumber);
-        Byte cows = tmpNumber.getCows(tmpNumber);
-        
-        if(bulls == 4)
-            setMIsfinished(true);
-        
-        Pair<Byte, Byte> result = new Pair<Byte, Byte>(bulls, cows);
-        return result;
+
+    public Turn getCurrentTurn() {
+        return mCurrentTurn;
+    }
+
+    public Turn createNewTurn(Number num) {
+        return new Turn(num);
     }
     
-    public NewGame()
-    {
-        super();
-    }
-    
-    public NewGame(String tmp)
-    {
-        super(tmp);
-        if(tmp.startsWith("f"))
-            setMIsfinished(true);
-        else
-            setMIsfinished(false);
+    Pair<Byte, Byte> checkNumber() {
+        assert(mCurrentTurn != null);
+
+        Number currNum = mCurrentTurn.getNumber();
+
+        Byte bulls = currNum.getBulls(currNum);
+        Byte cows = currNum.getCows(currNum);
+
+        if (bulls == 4)
+            setIsFinished(true);
+
+        return new Pair<Byte, Byte>(bulls, cows);
     }
     
     @Override
-    public String toMString()
-    {
+    public String toString()  {
        String finStr = "";
-       if(getMIsFinished() == true)
+       if(getIsFinished() == true)
            finStr = "f";
-       finStr += super.toMString();
+
+        finStr += super.toString();
+
        return finStr;
     }
 }

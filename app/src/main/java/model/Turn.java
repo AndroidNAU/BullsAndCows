@@ -1,24 +1,18 @@
 package model;
 
-/**
- * Created by Shady on 12.02.2016.
- */
 public class Turn {
 
     private Number mNumber;
     private byte mBulls;
     private byte mCows;
 
-    public Turn(String tmp){
-        //Example of tmp is "****/*/*"
-        
+    public Turn(String tmp) {
+        // Example of tmp is "****/*/*"
+        // After this split we have such array
+        //  forTurnArr[0] = "****"
+        //  forTurnArr[1] = "*"
+        //  forTurnArr[2] = "*"
         String [] forTurnArr = tmp.split("/");
-        /*
-            After this split we have such array
-            forTurnArr[0] = "****"
-            forTurnArr[1] = "*"
-            forTurnArr[2] = "*"
-        */
         
         String forNumber = forTurnArr[0];
         mNumber = new Number(forNumber);
@@ -30,32 +24,38 @@ public class Turn {
         mCows = Byte.decode(forCows);
     }
 
-    public void setMNumber(Number usrNumber){
+    public Turn(Number num) {
+        mNumber = num;
+        mBulls = 0;
+        mCows = 0;
+    }
+
+    public void setNumber(Number usrNumber) {
         mNumber = usrNumber;
     }
 
-    public Number getMNumber(){
+    public Number getNumber() {
         return mNumber;
     }
 
-    public void setMBulls(byte usrBulls){
+    public void setBulls(byte usrBulls) {
         mBulls = usrBulls;
     }
 
-    public byte getMBulls(){
+    public byte getBulls() {
         return mBulls;
     }
 
-    public void setMCows(byte usrCows){
+    public void setCows(byte usrCows) {
         mCows = usrCows;
     }
 
-    public byte getMCows(){
+    public byte getCows() {
         return mCows;
     }
 
-    public String toMString()
-    {
+    @Override
+    public String toString() {
         String tmp;
         tmp = "t/";
         tmp += mNumber.getDigits();
@@ -63,6 +63,7 @@ public class Turn {
         tmp += Byte.toString(mBulls);
         tmp += "/";
         tmp += Byte.toString(mCows);
+
         return tmp;
     }
 

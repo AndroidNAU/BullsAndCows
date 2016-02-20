@@ -1,57 +1,46 @@
 ﻿package model;
 
 import java.util.ArrayList;
-import java.util.Random;
 
-/**
- *
- * @author Maxim
- */
 public class Game {
     
     private ArrayList<Turn> mTurns;
     private Number mSecretNum;
+
+    public Game() {
+        mSecretNum = new Number();
+        mTurns = new ArrayList<Turn>();
+    }
+
+    public Game(String info) {
+        //Example of info is "g/****/t/****/*/*t/****/*/*/..."
+        //  Split it and we will have array splitedStrArray, example is:
+        //      splitedStrArray[0] = "g/****/"
+        //      splitedStrArray[1] = "****/*/*"
+        //      splitedStrArray[1] = "****/*/*"
+        String [] splitedStrArray = info.split("t/");
+
+        // This is regular expressions. Means: \D - not digits, + one or more times.
+        // So the full meaning is to replays all not digits to ""
+        String secretNumStr = splitedStrArray[0].replaceAll("\\D+","");
+        mSecretNum = new Number(secretNumStr);
+
+        for(byte i = 1; i < splitedStrArray.length; i++)
+            mTurns.add(new Turn(splitedStrArray[i]));
+    }
     
-    public ArrayList<Turn> getMTurns(){
+    public ArrayList<Turn> getTurns() {
         return mTurns;
     }
     
-    public Number getMSecretNum(){
+    public Number getSecretNum() {
         return mSecretNum;
     }
     
-    public Game(){
-        mSecretNum = new Number();
-    }
-    
-    public Game(String tmp)
-    {
-        //Example of tmp is "g/****/t/****/*/*t/****/*/*"
-        String [] secretNumWithTurns = tmp.split("t/");
-       
-          //  So we will have array secretNumWithTurns, example is:
-          //      secretNumWithTurns[0] = "g/****/"
-          //      secretNumWithTurns[1] = "****/*/*"
-          //      secretNumWithTurns[1] = "****/*/*"
-        
-        String forSecretNum = secretNumWithTurns[0].replaceAll("g/", "");
-        forSecretNum = forSecretNum.replaceAll("/", "");
-        //After that forSecretNum will look like "****"
-        mSecretNum = new Number(forSecretNum);
-        
-        for(byte i = 1; i < secretNumWithTurns.length; i++)
-        {
-           Turn tmpTurn = new Turn(secretNumWithTurns[i]);
-           mTurns.add(tmpTurn);
-        }
-        
-    }
-    
-    public String getLevel()
-    {
+    public String getLevel() {
         int level = mTurns.size();
         String strLevel;
-        switch (level){
+        switch (level) {
             case 1:
                 strLevel = "SUPERMEGAFARMER";
             case 2:
@@ -93,17 +82,18 @@ public class Game {
             default:
                 strLevel = "Newbie";
         }
+
         return strLevel;
     }
- 
-    public String toMString()
-    {
+
+    @Override
+    public String toString() {
         String tmp = "g/";
         tmp += mSecretNum.getDigits();
         tmp += "/";
         
         for(byte i = 0; i < mTurns.size(); i++)
-            tmp += mTurns.get(i).toMString();
+            tmp += mTurns.get(i).toString();
         
         return tmp;
     }
