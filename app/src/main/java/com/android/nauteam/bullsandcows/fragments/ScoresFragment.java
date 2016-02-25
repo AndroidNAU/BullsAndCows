@@ -10,9 +10,11 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import com.android.nauteam.bullsandcows.R;
-import com.android.nauteam.bullsandcows.Turn;
 import com.android.nauteam.bullsandcows.adapters.ScoresListAdapter;
-import com.android.nauteam.bullsandcows.adapters.TurnsListAdapter;
+
+import com.android.nauteam.bullsandcows.model.Player;
+import com.android.nauteam.bullsandcows.model.Turn;
+import com.android.nauteam.bullsandcows.model.Game;
 
 import java.util.ArrayList;
 
@@ -22,7 +24,8 @@ import java.util.ArrayList;
 public class ScoresFragment extends Fragment {
     private ListView mListView;
     private Button mBackButton;
-    private ArrayList<Turn> mScoresList;
+    private ArrayList<Game> mGameHistory;
+    private ArrayList<String> mScoresList;
     public static ScoresFragment newInstance()
     {
         ScoresFragment scoresfragment = new ScoresFragment();
@@ -33,11 +36,12 @@ public class ScoresFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mScoresList = new ArrayList<>();
-        for(int i = 0; i<10; i++)
+        Player player = new Player();
+        mGameHistory = player.getAllGames();
+        for(Game game : mGameHistory)
         {
-            Turn t = new Turn();
-            mScoresList.add(t);
+            String tmp = game.getLevel();
+            mScoresList.add(tmp);
         }
     }
 

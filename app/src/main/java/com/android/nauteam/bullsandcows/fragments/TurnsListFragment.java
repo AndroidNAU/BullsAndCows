@@ -6,12 +6,12 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.android.nauteam.bullsandcows.R;
-import com.android.nauteam.bullsandcows.Turn;
 import com.android.nauteam.bullsandcows.adapters.TurnsListAdapter;
+import com.android.nauteam.bullsandcows.model.NewGame;
+import com.android.nauteam.bullsandcows.model.Turn;
 
 import java.util.ArrayList;
 
@@ -23,6 +23,8 @@ public class TurnsListFragment extends Fragment {
     private ListView mListView;
     private ArrayList<Turn> mTurnsList;
 
+    private NewGame mCurrentGame;
+
     public static TurnsListFragment newInstance()
     {
       TurnsListFragment turnsListFragment = new TurnsListFragment();
@@ -32,12 +34,8 @@ public class TurnsListFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mTurnsList = new ArrayList<>();
-        for(int i = 0; i<10; i++)
-        {
-            Turn t = new Turn();
-            mTurnsList.add(t);
-        }
+        mCurrentGame = new NewGame();
+        mTurnsList = mCurrentGame.getTurns();
     }
 
     @Override

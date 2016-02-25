@@ -12,6 +12,7 @@ import android.view.View;
 import com.android.nauteam.bullsandcows.R;
 import com.android.nauteam.bullsandcows.fragments.ButtonsFragment;
 import com.android.nauteam.bullsandcows.fragments.TurnsListFragment;
+import com.android.nauteam.bullsandcows.model.NewGame;
 
 public class GameActivity extends AppCompatActivity {
 
@@ -30,6 +31,7 @@ public class GameActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });*/
+
         FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment turnsListFragment = TurnsListFragment.newInstance();
         fragmentManager.beginTransaction().add(R.id.turnsListFragment_container,turnsListFragment).commit();

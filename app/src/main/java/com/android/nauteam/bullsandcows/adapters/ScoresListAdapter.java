@@ -8,30 +8,29 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.android.nauteam.bullsandcows.R;
-import com.android.nauteam.bullsandcows.Turn;
 
 import java.util.ArrayList;
 
 /**
  * Created by Intelcom on 19.02.2016.
  */
-public class ScoresListAdapter  extends ArrayAdapter<Turn> {
+public class ScoresListAdapter  extends ArrayAdapter<String> {
     private Context mContext;
-    private ArrayList<Turn> mTurnsList;
+    private ArrayList<String> mScoresList;
 
-    public ScoresListAdapter(Context context, ArrayList<Turn> arrayList) {
+    public ScoresListAdapter(Context context, ArrayList<String> arrayList) {
         super(context, R.layout.item_scores_list);
         mContext =context;
-        mTurnsList = arrayList;
+        mScoresList = arrayList;
     }
     @Override
     public int getCount() {
-        return mTurnsList.size();
+        return mScoresList.size();
     }
 
     @Override
-    public Turn getItem(int position) {
-        return mTurnsList.get(position);
+    public String getItem(int position) {
+        return mScoresList.get(position);
     }
 
     @Override
