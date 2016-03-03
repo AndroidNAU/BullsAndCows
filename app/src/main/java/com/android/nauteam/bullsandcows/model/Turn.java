@@ -1,4 +1,4 @@
-package model;
+package com.android.nauteam.bullsandcows.model;
 
 public class Turn {
 

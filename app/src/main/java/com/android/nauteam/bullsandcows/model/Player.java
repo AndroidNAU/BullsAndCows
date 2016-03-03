@@ -1,4 +1,4 @@
-package model;
+package com.android.nauteam.bullsandcows.model;
 
 import java.util.ArrayList;
 
@@ -39,7 +39,7 @@ public class Player {
         this.mName = usrStr;
     }
     
-    ArrayList<Game> getAllGames() {
+    public ArrayList<Game> getAllGames() {
         return mAllGames;
     }
     
