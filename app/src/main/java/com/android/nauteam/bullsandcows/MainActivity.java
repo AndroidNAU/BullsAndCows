@@ -7,23 +7,21 @@ import android.os.Bundle;
 
 public class MainActivity extends Activity {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         FragmentManager fm = getFragmentManager();
-        Fragment fragment = fm.findFragmentById(R.id.LinearLayout1);
+        Fragment fragment = fm.findFragmentById(R.id.FragmentConteiner);
 
         if (fragment == null) {
             fragment = new MenuFragment();
             fm.beginTransaction()
-                    .add(R.id.LinearLayout1, fragment)
+                    .add(R.id.FragmentConteiner, fragment)
                     .commit();
 
         }
-
     }
 }
 

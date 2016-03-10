@@ -8,25 +8,30 @@
         android:label="@string/app_name"
         android:minSdkVersion="11"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        >
+        android:theme="@style/AppTheme" >
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name="com.android.nauteam.bullsandcows.DemoGame" >
         </activity>
+
         <activity
             android:name="com.android.nauteam.bullsandcows.DemoScores" >
         </activity>
-        <activity android:name="com.android.nauteam.bullsandcows.ExitMenu"></activity>
+
+        <activity
+            android:name="com.android.nauteam.bullsandcows.ExitMenu" >
+        </activity>
+
     </application>
 
 </manifest>
