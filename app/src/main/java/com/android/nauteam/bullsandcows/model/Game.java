@@ -1,4 +1,4 @@
-﻿package com.android.nauteam.bullsandcows.model;
+package com.android.nauteam.bullsandcows.model;
 
 import java.util.ArrayList;
 
