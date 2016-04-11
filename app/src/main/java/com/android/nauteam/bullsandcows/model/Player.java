@@ -1,8 +1,9 @@
 package com.android.nauteam.bullsandcows.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Player {
+public class Player implements Serializable {
 
     private String mName;
     private NewGame mCurrentGame;
@@ -15,7 +16,7 @@ public class Player {
     }
 
     public Player(String info) {
-        String [] splitedStrArray = info.split("/p");
+        String [] splitedStrArray = info.split("/pg/");
 
         mName = splitedStrArray[0];
 
@@ -37,6 +38,10 @@ public class Player {
     
     public void setName(String usrStr) {
         this.mName = usrStr;
+    }
+
+    public NewGame getCurrentGame() {
+        return mCurrentGame;
     }
     
     public ArrayList<Game> getAllGames() {

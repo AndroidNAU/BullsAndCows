@@ -25,6 +25,7 @@ public class Game {
         String secretNumStr = splitedStrArray[0].replaceAll("\\D+","");
         mSecretNum = new Number(secretNumStr);
 
+        mTurns = new ArrayList<Turn>();
         for(byte i = 1; i < splitedStrArray.length; i++)
             mTurns.add(new Turn(splitedStrArray[i]));
     }

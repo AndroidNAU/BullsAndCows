@@ -1,8 +1,16 @@
 <resources>
     <string name="app_name">BullsAndCows</string>
     <string name="action_settings">Settings</string>
+
     <string name="title_activity_game">GameActivity</string>
 
-<!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Strings from menu -->
+    <string name="resume">Resume</string>
+    <string name="new_game">New Game</string>
+    <string name="scores">Scores</string>
+    <string name="exit">Exit</string>
+    <!-- String for exit -->
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="sure">Sure?</string>
 </resources>

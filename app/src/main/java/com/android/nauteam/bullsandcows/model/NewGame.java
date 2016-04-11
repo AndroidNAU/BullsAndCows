@@ -2,7 +2,9 @@ package com.android.nauteam.bullsandcows.model;
 
 import android.util.Pair;
 
-public class NewGame extends Game {
+import java.io.Serializable;
+
+public class NewGame extends Game implements Serializable {
 
     private boolean mIsFinished;
     private Turn mCurrentTurn;
@@ -53,7 +55,7 @@ public class NewGame extends Game {
     @Override
     public String toString()  {
        String finStr = "";
-       if(getIsFinished() == true)
+       if(getIsFinished())
            finStr = "f";
 
         finStr += super.toString();
