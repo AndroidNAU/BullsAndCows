@@ -5,17 +5,25 @@ import java.util.ArrayList;
 
 public class Player implements Serializable {
 
+    private static Player instance;
+
     private String mName;
     private NewGame mCurrentGame;
     private ArrayList<Game> mAllGames;
 
-    public Player() {
-        mName = new String();
+    private Player() {
         mCurrentGame = null;
         mAllGames = new ArrayList<Game>();
     }
 
-    public Player(String info) {
+    public static Player getInstance() {
+        if (instance == null)
+            instance = new Player();
+
+        return instance;
+    }
+
+    public void restore(String info) {
         String [] splitedStrArray = info.split("/pg/");
 
         mName = splitedStrArray[0];

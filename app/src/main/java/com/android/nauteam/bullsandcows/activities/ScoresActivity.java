@@ -7,7 +7,6 @@ import android.os.Bundle;
 
 import com.android.nauteam.bullsandcows.R;
 import com.android.nauteam.bullsandcows.fragments.ScoresFragment;
-import com.android.nauteam.bullsandcows.fragments.TurnsListFragment;
 
 public class ScoresActivity extends AppCompatActivity {
 

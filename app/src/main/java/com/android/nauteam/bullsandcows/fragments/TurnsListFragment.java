@@ -7,34 +7,31 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import java.util.ArrayList;
 
 import com.android.nauteam.bullsandcows.R;
 import com.android.nauteam.bullsandcows.adapters.TurnsListAdapter;
 import com.android.nauteam.bullsandcows.model.NewGame;
+import com.android.nauteam.bullsandcows.model.Player;
 import com.android.nauteam.bullsandcows.model.Turn;
 
-import java.util.ArrayList;
 
-/**
- * Created by Mr Smith on 04.02.2016.
- */
 public class TurnsListFragment extends Fragment {
 
     private ListView mListView;
+    TurnsListAdapter mTurnsListAdapter;
     private ArrayList<Turn> mTurnsList;
 
     private NewGame mCurrentGame;
 
-    public static TurnsListFragment newInstance()
-    {
-      TurnsListFragment turnsListFragment = new TurnsListFragment();
-      return turnsListFragment;
+    public static TurnsListFragment newInstance() {
+      return new TurnsListFragment();
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mCurrentGame = new NewGame();
+        mCurrentGame = Player.getInstance().getCurrentGame();
         mTurnsList = mCurrentGame.getTurns();
     }
 
@@ -44,7 +41,7 @@ public class TurnsListFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_turns_list, container, false);
         mListView = (ListView) view.findViewById(R.id.listView_turnsList);
 
-        TurnsListAdapter mTurnsListAdapter = new TurnsListAdapter(this.getActivity(), mTurnsList);
+        mTurnsListAdapter = new TurnsListAdapter(this.getActivity(), mTurnsList);
 
         mListView.setAdapter(mTurnsListAdapter);
 
@@ -56,5 +53,11 @@ public class TurnsListFragment extends Fragment {
 //        });
 
         return view;
+    }
+
+    public void addTurn(Turn turn) {
+        mTurnsList.add(turn);
+
+        mTurnsListAdapter.notifyDataSetChanged();
     }
 }

@@ -1,5 +1,6 @@
 package com.android.nauteam.bullsandcows.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -7,14 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-
 import com.android.nauteam.bullsandcows.R;
-
 import java.util.ArrayList;
 
-/**
- * Created by Intelcom on 04.02.2016.
- */
 public class ButtonsFragment extends Fragment {
  private Button mButton0;
  private Button mButton1;
@@ -37,12 +33,17 @@ public class ButtonsFragment extends Fragment {
 
     private boolean isFourthFilled = false;
 
-    public static ButtonsFragment newInstance()
-    {
-        ButtonsFragment buttonsFragment = new ButtonsFragment();
-        return buttonsFragment;
+
+    private OnNumberReadyListener mCallback;
+
+    public interface OnNumberReadyListener {
+        public void onNumberEntered(String number);
     }
 
+
+    public static ButtonsFragment newInstance() {
+        return new ButtonsFragment();
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,7 +51,27 @@ public class ButtonsFragment extends Fragment {
         mDigitsList = new ArrayList<>();
 
     }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+
+        // This makes sure that the container activity has implemented
+        // the callback interface. If not, it throws an exception
+        try {
+            mCallback = (OnNumberReadyListener) context;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(context.toString()
+                    + " must implement OnHeadlineSelectedListener");
+        }
+    }
+
     private void ButtonsManager(String digit, boolean isDigit){
+
+        for (int i = 0; i < mDigitsList.size(); i++) {
+            if (mDigitsList.get(i).equals(digit))
+                return;
+        }
 
         if( isDigit && mNumberOfDigits < 4){
             mNumberOfDigits++;
@@ -72,8 +93,7 @@ public class ButtonsFragment extends Fragment {
 
                 mTextView4.setText(digit);
 
-                if(isDigit)isFourthFilled = true;
-                else isFourthFilled = false;
+                isFourthFilled = isDigit ? true : false;
 
                 break;
             default:
@@ -179,7 +199,13 @@ public class ButtonsFragment extends Fragment {
         mButtonOkay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //okaybutton
+                if (isFourthFilled) {
+                    String number = "";
+                    for (int i = 0; i < mDigitsList.size(); i++)
+                        number += mDigitsList.get(i);
+
+                    mCallback.onNumberEntered(number);
+                }
             }
         });
         return view;

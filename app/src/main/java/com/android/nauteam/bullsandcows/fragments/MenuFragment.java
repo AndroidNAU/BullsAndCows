@@ -1,4 +1,4 @@
-package com.android.nauteam.bullsandcows;
+package com.android.nauteam.bullsandcows.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.android.nauteam.bullsandcows.R;
 import com.android.nauteam.bullsandcows.activities.GameActivity;
 import com.android.nauteam.bullsandcows.activities.ScoresActivity;
 import com.android.nauteam.bullsandcows.model.Player;
@@ -25,10 +26,10 @@ public class MenuFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Bundle b = this.getArguments();
-        if (b != null) {
-            mPlayer = (Player)b.getSerializable("PLAYER");
-        }
+        String pref = "Yarik/pg/1234/t/0987/0/0";
+
+        mPlayer = Player.getInstance();
+        mPlayer.restore(pref);
     }
 
     @Override
@@ -50,8 +51,6 @@ public class MenuFragment extends Fragment {
                 mPlayer.startNewGame();
 
                 Intent intent = new Intent(getActivity(), GameActivity.class);
-                intent.putExtra("NEW_GAME", mPlayer.getCurrentGame());
-
                 startActivity(intent);
             }
         });

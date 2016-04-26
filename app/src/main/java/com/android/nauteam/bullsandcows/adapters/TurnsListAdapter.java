@@ -6,16 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-
 import com.android.nauteam.bullsandcows.R;
-
 import com.android.nauteam.bullsandcows.model.Turn;
-
 import java.util.ArrayList;
 
-/**
- * Created by Mr Smith on 06.02.2016.
- */
 public class TurnsListAdapter extends ArrayAdapter<Turn> {
 
     private Context mContext;

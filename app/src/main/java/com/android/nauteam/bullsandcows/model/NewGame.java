@@ -1,7 +1,6 @@
 package com.android.nauteam.bullsandcows.model;
 
 import android.util.Pair;
-
 import java.io.Serializable;
 
 public class NewGame extends Game implements Serializable {
@@ -49,7 +48,7 @@ public class NewGame extends Game implements Serializable {
         if (bulls == 4)
             setIsFinished(true);
 
-        return new Pair<Byte, Byte>(bulls, cows);
+        return new Pair<>(bulls, cows);
     }
     
     @Override

@@ -6,14 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-
 import com.android.nauteam.bullsandcows.R;
-
 import java.util.ArrayList;
 
-/**
- * Created by Intelcom on 19.02.2016.
- */
 public class ScoresListAdapter  extends ArrayAdapter<String> {
     private Context mContext;
     private ArrayList<String> mScoresList;
