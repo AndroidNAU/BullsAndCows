@@ -205,9 +205,22 @@ public class ButtonsFragment extends Fragment {
                         number += mDigitsList.get(i);
 
                     mCallback.onNumberEntered(number);
+                    Clear();
                 }
             }
         });
         return view;
+    }
+
+    private void Clear() {
+        mTextView1.setText("");
+        mTextView2.setText("");
+        mTextView3.setText("");
+        mTextView4.setText("");
+
+        mDigitsList.clear();
+        mNumberOfDigits = 0;
+
+        isFourthFilled = false;
     }
 }
