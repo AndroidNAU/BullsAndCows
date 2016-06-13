@@ -18,7 +18,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="1."
+
                 android:id="@+id/turnNum_textView"
                 android:layout_weight="0.25"
                 android:gravity="center" />
@@ -27,7 +27,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="1234"
+
                 android:id="@+id/valueNum_textView"
                 android:layout_weight="0.75" />
         </LinearLayout>
@@ -42,7 +42,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="1"
+
                 android:id="@+id/bullsNum_textView" />
 
             <ImageView
@@ -61,7 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="3"
+
                 android:id="@+id/cowsNum_textView" />
 
             <ImageView
